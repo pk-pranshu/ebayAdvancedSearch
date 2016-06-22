@@ -1,0 +1,39 @@
+body {
+	margin-top: 20px;
+}
+form {
+	position: relative;
+	margin-left: 20px;
+	width: 90%;
+	margin-top: 30px;
+}
+#mainform label.error
+	{
+		color: red;
+		border: 1 px solid red;
+		position: absolute;
+	}
+
+	#mainform input.error
+	{
+		color: red;
+		border: 1px solid red;
+	}
+	
+	#mainform select.error
+	{
+		color: red;
+		border: 1px solid red;
+	}
+input
+{
+	margin-top: 5px;
+
+}
+
+select
+{
+
+ margin-top: 5px;
+
+}

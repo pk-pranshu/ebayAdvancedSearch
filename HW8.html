@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+		<script src="http://ajax.microsoft.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
+        <script src="HW8.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="HW8.css">  
+</head>
+
+<body>
+<div class="container-fluid">
+		<div class="row">
+ <div class="col-md-1 col-xs-4 col-sm-2" id="logo">
+       <img id="ebaylogo" height="40px" src="http://cs-server.usc.edu:45678/hw/hw6/ebay.jpg" alt="ebay Logo"></div>
+     <div  class="col-md-2 col-xs-3 col-sm-2">
+    <h3>Shopping</h3><br><br></div>
+             <div class="col-md-9 col-xs-6 col-sm-8"></div>
+      
+            </div>
+<div class="row">
+
+    <form class="form-horizontal" id="mainform">
+        <div class="form-group">
+            <label class="control-label  col-sm-3 col-md-2" for="inputkeyword">Keywords:*</label>
+					<div class="col-sm-9 col-md-10">
+         <input type="text" class="form-control" name="in_keyword" id="in_keyword" placeholder="Enter keyword" autofocus>
+            </div>
+           </div>
+    
+  <div class="form-group">
+            <label class="control-label col-sm-3 col-md-2" for="inputPricerange">Price range:</label>
+					<div class="col-sm-4 col-md-5">
+    <input type="text" class="form-control" name="price_from" id="price_from" placeholder="from ($)"></div>
+        <div class="col-sm-5 col-md-5">
+
+    <input type="text" class="form-control" name="price_to" id="price_to" placeholder="to ($)">
+  </div>
+        </div>
+          
+           <div class="form-group">
+            <label  class="control-label col-xs-12 col-sm-3 col-md-2" for="condition">Condition:</label>
+            <div class="col-xs-3 col-sm-1 col-md-2">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="condition[]" id="cond_new" value="1000">New</label>
+            </div>
+            <div class="col-xs-3 col-sm-1 col-md-2">
+            <div class="controls">
+
+            <label class="checkbox-inline">
+                    <input type="checkbox" name="condition[]" id="cond_used" value="3000"> Used </label>
+            </div>
+                </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                            <div class="controls">
+
+            <label class="checkbox-inline">
+                    <input type="checkbox" name="condition[]" id="cond_verygood" value="4000"> Very Good</label>
+            </div>
+                </div>
+            <div class="col-xs-3 col-sm-1 col-md-1">
+             <div class="controls">   
+            <label class="checkbox-inline">
+                   <input type="checkbox" name="condition[]" id="cond_good" value="5000"> Good</label>
+            </div>
+                </div>
+            <div class="col-xs-9 col-sm-2 col-md-1">
+            <div class="controls">   
+
+            <label class="checkbox-inline">
+           <input type="checkbox" name="condition[]" id="cond_acceptable" value="6000">Acceptable</label>
+            </div>
+                <div class="col-sm-2 col-md-3">
+					</div>
+        </div>
+            </div>
+          
+         <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-3 col-md-2" for="Buying Format">Buying Format:                 
+            </label>
+             <div class="col-xs-5 col-sm-2 col-md-2">           
+            <label class="checkbox-inline">
+                <input type="checkbox" name="format[]" id="buynow" value="FixedPrice">Buy It Now</label>
+            </div>
+					<div class="col-xs-3 col-sm-1 col-md-1">
+                        <div class="controls">    
+            <label class="checkbox-inline">
+                <input type="checkbox" name="format[]" id="auction" value="Auction">Auction</label>
+            </div>
+             </div>
+            <div class="col-xs-3 col-sm-1 col-md-7">
+            <div class="controls">    
+            <label class="checkbox-inline">
+                <input type="checkbox" name="format[]" id="classifiedads" value="Classified">Classified Ads</label>
+            </div>
+                </div>
+        </div>
+            
+
+ <div class="form-group">
+            <label  class="control-label col-xs-12 col-sm-3 col-md-2" for="condition">Seller:</label>
+            <div class="col-xs-12 col-sm-9 col-md-10">
+            <label class="checkbox-inline">
+                <input type="checkbox" id="seller" name="seller">Return accepted</label>
+            </div>
+        </div>
+    
+<div class="form-group">
+            <label  class="control-label col-xs-12 col-sm-3 col-md-2" for="condition">Shipping:</label>
+            <div class="col-xs-6 col-sm-3 col-md-2">            
+                <label class="checkbox-inline">
+            <input type="checkbox" name="free" id="free">Free Shipping</label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-8">
+                					
+            <div class="controls">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="expedited" id="expedited">Expedited Shipping</label>  
+            </div>
+            </div>
+        </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3 col-md-2"></label> 
+ 				<div class="col-sm-9 col-md-10">
+              <input type="text" class="form-control" name="max_days" id="max_days" placeholder="Max handling time(days)">
+            </div>
+        </div>
+    
+<div class="form-group">
+  <label class="control-label col-sm-3 col-md-2" for="SortBy">Sort by:</label> 
+ <div class="col-sm-9 col-md-10">
+     <select class="form-control" name="SortBy" id="SortBy">
+    <option value="BestMatch" selected>Best Match</option>
+    <option value="CurrentPriceHighest">Price: highest first</option>
+    <option value="PricePlusShippingHighest">Price + Shipping: highest First</option>
+    <option value="PricePlusShippingLowest">Price + Shipping: lowest first</option>
+    </select>  
+</div>
+</div>
+
+<div class="form-group" name="SortBy" id="SortBy">
+    <label class="control-label col-sm-3 col-md-2" for="Resultsperpage">Results per page:</label>
+     <div class="col-sm-9 col-md-10">
+         <select class="form-control" name="Resultsperpage" id="Resultsperpage">
+        <option selected>5</option>
+        <option>10</option>
+        </select>
+    </div>
+    </div>   
+
+    
+    <br> 
+    
+    <div class="form-group">
+                
+        <div class="col-xs-3 col-sm-offset-9 col-sm-1 col-md-offset-10 col-md-1">
+
+                <input type="reset" class="btn btn-default" name="clear" id="clear" value="clear"></div>
+            					<div class="col-xs-6 col-sm-1 col-md-1">
+
+            <input type="button" name="submit" id="submit" class="btn btn-primary" value="Search" ></div>
+            
+            </div>
+           
+    </form>
+</div>
+</div>
+
+			<div id="header"></div>
+
+            <div id="displayresult"></div>
+
+			<div id="page"></div>
+
+        
+            
+            
+</body>
+  
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
